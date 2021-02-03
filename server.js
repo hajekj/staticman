@@ -25,7 +25,8 @@ class StaticmanAPI {
 
     this.initialiseWebhookHandler()
     this.initialiseCORS()
-    this.initialiseBruteforceProtection()
+    // Turned off as per https://github.com/hajekj/hajekj.github.io/issues/110
+    // this.initialiseBruteforceProtection()
     this.initialiseRoutes()
   }
 
