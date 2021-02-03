@@ -49,7 +49,7 @@ class StaticmanAPI {
     // Route: connect
     this.server.get(
       '/v:version/connect/:username/:repository',
-      this.bruteforce.prevent,
+      // this.bruteforce.prevent,
       this.requireApiVersion([1, 2]),
       this.controllers.connect
     )
@@ -57,7 +57,7 @@ class StaticmanAPI {
     // Route: process
     this.server.post(
       '/v:version/entry/:username/:repository/:branch',
-      this.bruteforce.prevent,
+      // this.bruteforce.prevent,
       this.requireApiVersion([1, 2]),
       this.requireParams(['fields']),
       this.controllers.process
@@ -65,7 +65,7 @@ class StaticmanAPI {
 
     this.server.post(
       '/v:version/entry/:username/:repository/:branch/:property',
-      this.bruteforce.prevent,
+      // this.bruteforce.prevent,
       this.requireApiVersion([2]),
       this.requireParams(['fields']),
       this.controllers.process
@@ -73,7 +73,7 @@ class StaticmanAPI {
 
     this.server.post(
       '/v:version/entry/:service/:username/:repository/:branch/:property',
-      this.bruteforce.prevent,
+      // this.bruteforce.prevent,
       this.requireApiVersion([3]),
       this.requireService(['github', 'gitlab']),
       this.requireParams(['fields']),
@@ -83,7 +83,7 @@ class StaticmanAPI {
     // Route: encrypt
     this.server.get(
       '/v:version/encrypt/:text',
-      this.bruteforce.prevent,
+      // this.bruteforce.prevent,
       this.requireApiVersion([2, 3]),
       this.controllers.encrypt
     )
@@ -91,7 +91,7 @@ class StaticmanAPI {
     // Route: oauth
     this.server.get(
       '/v:version/auth/:service/:username/:repository/:branch/:property',
-      this.bruteforce.prevent,
+      // this.bruteforce.prevent,
       this.requireApiVersion([2, 3]),
       this.requireService(['github', 'gitlab']),
       this.controllers.auth
